@@ -55,7 +55,7 @@ module SFax
       status_items = parsed_response['RecipientFaxStatusItems'] || []
       success_fax_id = status_items.first['SendFaxQueueId'] unless status_items.empty?
       is_success = parsed_response['isSuccess'] ? true : false
-      return success_fax_id, is_success
+      return success_fax_id, is_success, status_items, parsed_response
     end
 
     # If there are any received faxes, returns an array of fax_ids for those faxes.
