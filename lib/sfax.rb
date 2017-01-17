@@ -84,6 +84,15 @@ module SFax
       response.body
     end
 
+    def download_outbound_fax_as_pdf(fax_id)
+      return if fax_id.nil?
+
+      connection = SFax::Connection.incoming
+      path = @path.download_outbound_fax_as_pdf(fax_id)
+      response = connection.get path
+      response.body
+    end
+
     def download_fax_as_tif(fax_id)
       return if fax_id.nil?
 
