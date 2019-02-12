@@ -29,7 +29,7 @@ module SFax
 
     def cipher(data = nil, decrypt = false, &block)
       @decrypt = decrypt
-      @cipher = OpenSSL::Cipher::Cipher.new('aes-256-cbc')
+      @cipher = OpenSSL::Cipher.new('aes-256-cbc')
 
       if @decrypt
         @cipher.decrypt
